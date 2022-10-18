@@ -1,0 +1,5 @@
+app register --name "time-source" --type source --uri http://mnl-077.mnlabs.pl:81/time-source-0.0.1-SNAPSHOT.jar
+app register --name "time-processor" --type processor --uri http://mnl-077.mnlabs.pl:81/time-processor-0.0.1-SNAPSHOT.jar
+app register --name "time-to-log" --type sink --uri http://mnl-077.mnlabs.pl:81/time-to-log-0.0.1-SNAPSHOT.jar
+stream create --name time-to-log --definition "time-source | time-processor | time-to-log"
+stream deploy --name time-to-log
